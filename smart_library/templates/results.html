@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body class="p-5">
+    <h1>Search Results</h1>
+    {% if books %}
+        <table class="table table-bordered">
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Rack Location</th>
+                <th>Available Copies</th>
+            </tr>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.rack_location }}</td>
+                <td>{{ book.available_copies }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No books found.</p>
+    {% endif %}
+</body>
+</html>
